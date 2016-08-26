@@ -8,8 +8,8 @@ sleep 3
 printf "${RED}Checking status of dnsmasq and hostapd\n${NC}"
 hostapdid="$(pidof dnsmasq)"
 dnsmasqid="$(pidof hostapd)"
-echo "dnsmasqid $dnsmasq"
-echo "hostapid $hostapd"
+sudo service dnsmasq stop
+sudo service hostapd stop
 if [ "$dnsmasqid" != "" ]; then
     kill $hostapdid
     printf "${RED}Killing dnsmasq service\n${NC}"
