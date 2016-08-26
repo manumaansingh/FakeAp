@@ -5,17 +5,19 @@ printf "${RED}###Fake AP Script v0.1###\n${NC}"
 echo "Starting..."
 sudo service network-manager restart
 sleep 3
-echo "${RED}Checking status of dnsmasq and hostapd\n${NC}"
+printf "${RED}Checking status of dnsmasq and hostapd\n${NC}"
 hostapdid="$(pidof dnsmasq)"
 dnsmasqid="$(pidof hostapd)"
-kill hostapdid
-kill dnsmaqid
-if ["$dnsmasqid" != "" ]
-	echo "${RED}Killing dnsmasq service\n${NC}"
-fin
-if [ "$hostapd" != "" ]
-	echo "${RED}Killing hostapd service\n${NC}"
-fin
+echo "dnsmasqid $dnsmasq"
+echo "hostapid $hostapd"
+if [ "$dnsmasqid" != "" ]; then
+    kill $hostapdid
+    printf "${RED}Killing dnsmasq service\n${NC}"
+fi
+if [ "$hostapd" != "" ]; then
+    kill $dnsmasqid
+    printf "${RED}Killing hostapd service\n${NC}"
+fi
 #echo "${RED}Killing\n${NC}"
 printf "${CYAN}Select your device : ${NC}"
 read device
