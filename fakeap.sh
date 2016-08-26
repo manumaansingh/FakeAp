@@ -11,11 +11,11 @@ dnsmasqid="$(pidof hostapd)"
 sudo service dnsmasq stop
 sudo service hostapd stop
 if [ "$dnsmasqid" != "" ]; then
-    kill $hostapdid
+    kill $dnsmasqid
     printf "${RED}Killing dnsmasq service\n${NC}"
 fi
 if [ "$hostapd" != "" ]; then
-    kill $dnsmasqid
+    kill $hostapdid
     printf "${RED}Killing hostapd service\n${NC}"
 fi
 #echo "${RED}Killing\n${NC}"
