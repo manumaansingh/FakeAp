@@ -19,6 +19,7 @@ if [ "$hostapd" != "" ]; then
     printf "${RED}Killing hostapd service\n${NC}"
 fi
 #echo "${RED}Killing\n${NC}"
+ifconfig
 printf "${CYAN}Select your device : ${NC}"
 read device
 printf "${CYAN}Choose AP name : ${NC}"
