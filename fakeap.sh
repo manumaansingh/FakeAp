@@ -14,7 +14,7 @@ if [ "$dnsmasqid" != "" ]; then
     kill $dnsmasqid
     printf "${RED}Killing dnsmasq service\n${NC}"
 fi
-if [ "$hostapd" != "" ]; then
+if [ "$hostapdid" != "" ]; then
     kill $hostapdid
     printf "${RED}Killing hostapd service\n${NC}"
 fi
